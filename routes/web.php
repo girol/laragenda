@@ -18,20 +18,20 @@ Route::get('/', function () {
 /**
  * Quando contatos for chamado, retorna apenas uma view  
 */
-Route::get('/contatos', function () {
-    $contatos = DB::table('contacts')->get();
+Route::get('/contacts', function () {
+    $contacts = DB::table('contacts')->get();
 
-    // return $contatos;
-    return view ('contatos', compact('contatos'));
+    // return $contacts;
+    return view ('contatos', compact('contacts'));
 });
 
 /* 
     Busca apenas um contato
  */
-Route::get('/contatos/{contato}', function ($id) {
+Route::get('/contacts/{contact}', function ($id) {
     
-    $contato = DB::table('contacts')->find($id);
+    $contact = DB::table('contacts')->find($id);
 
-    // return $contatos;
-    return view ('contato', compact('contato'));
+    // return $contacts;
+    return view ('contato', compact('contact'));
 });

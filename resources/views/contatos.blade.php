@@ -9,9 +9,9 @@
 <body>
     <h1>Contatos</h1>
     <ul>
-    @foreach ($contatos as $contato)
+    @foreach ($contacts as $contact)
         
-        <li><a href="/contatos/{{$contato->id}}">{{ $contato->name }}</a> | telefone: {{ $contato->phone }} </li>
+        <li><a href="/contacts/{{$contact->id}}">{{ $contact->name }}</a> | telefone: {{ $contact->phone }} </li>
 
     @endforeach
     </ul>
