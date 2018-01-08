@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * Quando contatos for chamado, redireiciona  
+*/
+Route::get('/contatos', function () {
+    $contatos = [
+        'fulano',
+        'beltrano',
+        'ciclano'
+    ];
+
+    return view ('contatos', compact('contatos'));
+});

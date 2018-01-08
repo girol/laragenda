@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>olá</h1>
+    <h1>Contatos</h1>
+    <ul>
+    @foreach ($contatos as $contato)
+        
+        <li>{{ $contato }}</li>
+
+    @endforeach
+    </ul>
 </body>
 </html>
