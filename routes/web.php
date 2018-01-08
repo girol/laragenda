@@ -16,14 +16,11 @@ Route::get('/', function () {
 });
 
 /**
- * Quando contatos for chamado, redireiciona  
+ * Quando contatos for chamado, retorna apenas uma view  
 */
 Route::get('/contatos', function () {
-    $contatos = [
-        'fulano',
-        'beltrano',
-        'ciclano'
-    ];
+    $contatos = DB::table('contacts')->get();
 
+    // return $contatos;
     return view ('contatos', compact('contatos'));
 });

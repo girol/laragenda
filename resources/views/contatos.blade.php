@@ -11,7 +11,7 @@
     <ul>
     @foreach ($contatos as $contato)
         
-        <li>{{ $contato }}</li>
+        <li>{{ $contato->name }} | telefone: {{ $contato->phone }} </li>
 
     @endforeach
     </ul>
