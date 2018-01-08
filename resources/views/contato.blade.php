@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Contato {{ $contato->name }} </title>
 </head>
 <body>
-    <h1>Contatos</h1>
-    <ul>
-    @foreach ($contatos as $contato)
-        
-        <li><a href="/contatos/{{$contato->id}}">{{ $contato->name }}</a> | telefone: {{ $contato->phone }} </li>
+    <h1>{{ $contato->name }}</h1>
+    <hr>
 
-    @endforeach
+    telefone: {{ $contato->phone }}
+
     </ul>
 </body>
 </html>

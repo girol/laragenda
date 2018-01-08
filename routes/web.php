@@ -24,3 +24,14 @@ Route::get('/contatos', function () {
     // return $contatos;
     return view ('contatos', compact('contatos'));
 });
+
+/* 
+    Busca apenas um contato
+ */
+Route::get('/contatos/{contato}', function ($id) {
+    
+    $contato = DB::table('contacts')->find($id);
+
+    // return $contatos;
+    return view ('contato', compact('contato'));
+});
