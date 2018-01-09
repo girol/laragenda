@@ -20,24 +20,10 @@ Route::get('/', function () {
 /**
  * Quando contatos for chamado, retorna apenas uma view  
 */
-Route::get('/contacts', function () {
-
-    //$contacts = DB::table('contacts')->get();
-
-    // Usando Eloquent:
-    $contacts = Contact::all();
-
-    // return $contacts;
-    return view ('contatos', compact('contacts'));
-});
+Route::get('/contacts', 'ContactsController@index');
 
 /* 
     Busca apenas um contato
  */
-Route::get('/contacts/{contact}', function ($id) {
-    
-    $contact = Contact::find($id);
 
-    // return $contacts;
-    return view ('contato', compact('contact'));
-});
+Route::get('/contacts/{contact}', 'ContactsController@show');
