@@ -11,6 +11,8 @@
 |
 */
 
+use App\Contact;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,7 +21,11 @@ Route::get('/', function () {
  * Quando contatos for chamado, retorna apenas uma view  
 */
 Route::get('/contacts', function () {
-    $contacts = DB::table('contacts')->get();
+
+    //$contacts = DB::table('contacts')->get();
+
+    // Usando Eloquent:
+    $contacts = Contact::all();
 
     // return $contacts;
     return view ('contatos', compact('contacts'));
@@ -30,7 +36,7 @@ Route::get('/contacts', function () {
  */
 Route::get('/contacts/{contact}', function ($id) {
     
-    $contact = DB::table('contacts')->find($id);
+    $contact = Contact::find($id);
 
     // return $contacts;
     return view ('contato', compact('contact'));
